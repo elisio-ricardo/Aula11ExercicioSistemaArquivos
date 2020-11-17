@@ -15,10 +15,10 @@ public class Principal {
 		String nome = "mailon";
 		String email = "mailon.com";
 		try {
-//			teste.verificaDirTemp();
+			teste.verificaDirTemp();
 //			teste.verificaRegistro(arquivo, codigo);
 //			teste.imprimeCadastro(arquivo, codigo);
-			teste.insereCadastro(arquivo, codigo, nome, email);
+//			teste.insereCadastro(arquivo, codigo, nome, email);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

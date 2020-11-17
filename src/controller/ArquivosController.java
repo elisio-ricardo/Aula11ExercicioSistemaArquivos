@@ -14,13 +14,14 @@ public class ArquivosController implements IArquivosController {
 
 	@Override
 	public void verificaDirTemp() throws IOException {
-		File dir = new File("C:\\TEMP\\exercicio");
+		boolean bool = false;
+		File dir = new File("C:/TEMP/exercicio");
 		File arq = new File(dir, "cadastro.csv");
 		if (dir.exists() && dir.isDirectory()) {
 			System.out.println("Diretorio Existe");
 		} else {
-			dir.mkdir();
-			System.out.println("Diretorio Criado");
+			bool = dir.mkdirs();
+			System.out.println("Diretorio Criado " + bool);
 		}
 		String conteudo = geraCadastro();
 		FileWriter fileWriter = new FileWriter(arq);
@@ -81,7 +82,7 @@ public class ArquivosController implements IArquivosController {
 			FileInputStream fluxo = new FileInputStream(arq);
 			InputStreamReader leitor = new InputStreamReader(fluxo);
 			BufferedReader buffer = new BufferedReader(leitor);
-			String linha = buffer.readLine();
+			String linha = buffer.readLine();// 
 			while (linha != null) {
 				if (linha.contains(cod)) {
 					dividelinha(linha);
